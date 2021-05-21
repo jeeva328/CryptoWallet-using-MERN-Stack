@@ -1,0 +1,48 @@
+#blk{
+    border: solid sandybrown;
+    border-width: 3px;
+    border-top-width: 4px;
+    border-left-width: 4px;
+    border-right-width: 3px;
+    background-color:rgb(17, 16, 1);
+    padding: 10% 10% 10% 10%;
+    width:193px;
+    margin-top: 8%;
+    height: 172px;
+}
+
+.box{
+    display: flex;
+    height:100px;
+    position: absolute;
+    top:45%;
+    left:8%;   
+    
+    
+}
+
+.box{
+    transform-style: preserve-3d;
+    animation: animate 5s linear infinite;
+    width: 200px;
+    height: 200px;
+    left:9%;
+}
+
+@keyframes animate{
+    0%{
+        transform: perspective(1000px) rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+    }
+    100%{
+        transform: perspective(1000px) rotateY(360deg) rotateX(360deg) rotateZ(360deg);
+    }
+}
+
+#a{
+    transform-origin: center;
+    transform-style: preserve-3d;
+    /* transform: rotateY(calc(1*45deg)) translateZ(100px); */
+    object-fit: cover;
+ 
+   
+}

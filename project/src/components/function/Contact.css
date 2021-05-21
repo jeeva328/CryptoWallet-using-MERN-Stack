@@ -1,0 +1,105 @@
+.btag{
+    color: white;
+    background-color: black;
+    width: 1025px;
+    height:558px;
+    border-color: sandybrown;
+    border-style:solid;
+    border-width: 3px;
+    position: absolute;
+    left:505px;
+    top: 119px;
+}
+
+.con{
+position:relative;
+width:1027px;
+height:450px;
+animation: cont 10s infinite;
+}
+
+@keyframes cont{
+    0%{
+        opacity:0%;
+    }
+    20%{
+        opacity:20%;
+    }
+    40%{
+        opacity: 40%;
+    }
+    60%{
+        opacity: 60%;
+    }
+    80%{
+        opacity: 80%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+
+.co{
+    display: flex;
+    position: absolute;
+    left:-1px; 
+    height:560px;
+}
+
+.phone{
+    display: flex;
+    position: absolute;
+    top:470px;
+    left:70px;
+    height:30px;
+      
+}
+
+.num{
+    text-align: center;
+    display: flex;
+position: relative;
+top:490px;
+left:40px;
+}
+
+.email{
+    display: flex;
+    position: absolute;
+    top:470px;
+    left:500px;
+    height:34px;
+   
+}
+
+.em{
+    text-align: center;
+    display: flex;
+position: absolute;
+top:490px;
+left:440px;
+}
+
+.sub{
+    position: relative;
+    top:62%;
+    left:65%;
+    animation: su 10s infinite;
+}
+
+.address{
+    display: flex;
+    position: absolute;
+    top:470px;
+    left:875px;
+    height:35px;
+
+}
+
+.ar{
+    text-align: center;
+    display: flex;
+position: absolute;
+top:490px;
+left:785px;   
+}

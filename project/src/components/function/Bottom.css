@@ -1,0 +1,32 @@
+.down{
+    position:absolute;
+    bottom:0.1%;
+    border: sandybrown solid ;
+    width: 1530px;
+    background-color: black;
+    text-decoration: wavy;
+    color: seashell;
+
+
+    display:flex;
+    overflow: hidden;
+    white-space: nowrap;
+    
+}
+
+.roll{
+    position:relative;
+    
+    animation: anim 40s linear infinite;
+}
+
+@keyframes anim{
+    0%
+    {
+        transform: translateX(0);
+    }
+100%
+{
+    transform: translateX(-100%);
+}
+}

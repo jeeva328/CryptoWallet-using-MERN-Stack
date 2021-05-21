@@ -1,0 +1,41 @@
+.abt{
+    color: white;
+    background-color: black;
+    width: 1025px;
+    height:558px;
+    border-color: sandybrown;
+    border-style:solid;
+    border-width: 3px;
+    position: absolute;
+    left:505px;
+    top: 119px;
+}
+
+.typed{
+    position: relative;
+    top:15px;
+    left:18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    letter-spacing: 3px;
+    word-spacing: 3px;
+    line-height: 50px;
+}
+
+#ah1{
+    color:sandybrown;
+    position: relative;
+   text-align: center;
+   font-size: 60px;
+   font-style:oblique;
+   font-family:'Courier New', Courier, monospace;
+   letter-spacing: 5px;
+}
+
+#ah1:hover{
+color:black;
+border-color: white;
+border-style: solid;
+background-color: sandybrown;
+
+}
