@@ -62,3 +62,25 @@ transition: width .3s;
 width: 100%;
 transition: width .3s;
 }
+
+.lo{
+    position: absolute;
+    color:white;
+    left:1375px;
+    top:0px;
+}
+
+.lo::after{
+    content: '';
+    display:block;
+    width: 0;
+    height:2px;
+    transition: width .3s;
+    background-color:white;
+}
+
+.lo:hover::after{
+    width: 100%;
+transition: width .3s;
+
+}

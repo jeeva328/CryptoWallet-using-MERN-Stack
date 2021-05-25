@@ -1,14 +1,12 @@
 import React from "react";
 import { Formik, useFormik } from "formik";
-
-
-
+import './Register.css'
 
 const initialValues = {
   name: "",
   birthday: "",
   phone: "",
-  email: "",
+  email: "",      
   pass: "",
   address: "",
   add: "",
@@ -18,31 +16,25 @@ const initialValues = {
 const validate = (values) => {
   let error = {};
   if (!values.name) {
-    error.name = "Required";
+    error.name = "Required Field";
   }
   if (!values.birthday) {
-    error.birthday = "Required";
+    error.birthday = "Required Field";
   }
   if (!values.phone) {
-    error.phone = "required";
+    error.phone = "Required Field";
   }
   if (!values.email) {
-    error.email = "required";
+    error.email = "Required Field";
   }
   if (!values.pass) {
-    error.pass = "required";
-  }
-  if (!values.address) {
-    error.address = "required";
+    error.pass = "Required Field";
   }
   return error;
 };
 
 function Loginss(props) {
   
-
-  
-
   const onSubmit = async (values) => {
     values.add = {
       name: values.name,
@@ -64,49 +56,54 @@ function Loginss(props) {
 
   return (
     <form  onSubmit={formik.handleSubmit}>
+      <body className='log'>
       <div >
-        <div>
-            
-          <label forhtml="name" >
+        <div>     
+          <label className='head' forhtml="name" >
             Name:                            
           </label>{" "}
         </div>{" "}
         <input
+        className="in"
           type=" "
           name="name"
-          placeholder="your name"    
+          placeholder="Your Name"    
          
           onChange={formik.handleChange} 
           value={formik.values.name}
           onBlur={formik.handleBlur}
         />{" "}
-        {formik.touched.name && formik.errors.name ? (
-          <div> {formik.errors.name} </div>
+         {formik.touched.name && formik.errors.name ? (
+          <div className='req'> {formik.errors.name} </div>
         ) : null}{" "}
       </div>{" "}
+      <br></br>
+
       <div >
         <div>
-          <label forhtml="birthday" >
-            Birthday:
+          <label className='head' forhtml="birthday" >
+            DateOfBirth:
           </label>{" "}
         </div>{" "}
         <input
           type="date"
           id="birthday"
           name="birthday"
-        
+          className="in"
           onChange={formik.handleChange}
           value={formik.values.birthday}
           onBlur={formik.handleBlur}
         />{" "}
-        {formik.touched.birthday && formik.errors.birthday ? (
-          <div> {formik.errors.birthday} </div>
+         {formik.touched.birthday && formik.errors.birthday ? (
+          <div  className='req'> {formik.errors.birthday} </div>
         ) : null}{" "}
       </div>{" "}
+      <br></br>
+
       <div >
         <div>
-          <label forhtml="phone" >
-            Phone number:
+          <label className='head' forhtml="phone" >
+            Contact Number:
           </label>{" "}
         </div>{" "}
         <input
@@ -114,6 +111,7 @@ function Loginss(props) {
           id="phone"
           name="phone"
           placeholder="0123456789"
+          className="in"
           // pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}-[0-9]{2}"
           onChange={formik.handleChange}
           value={formik.values.phone}
@@ -121,71 +119,59 @@ function Loginss(props) {
         
         />{" "}
         {formik.touched.phone && formik.errors.phone ? (
-          <div> {formik.errors.phone} </div>
+          <div  className='req'> {formik.errors.phone} </div>
         ) : null}{" "}
-      </div>{" "}
+        </div>{" "}
+      <br></br>
+
       <div >
         <div>
-          <label forhtml="email" >email
+          <label className='head' forhtml="email" >Email:
           </label>{" "}
         </div>{" "}
         <input
           type="email"
           name="email"
-          placeholder="your mail"
-     
+          placeholder="Your Email"
+          className="in"
           onChange={formik.handleChange}
           value={formik.values.email}
           onBlur={formik.handleBlur}
         />{" "}
         {formik.touched.email && formik.errors.email ? (
-          <div> {formik.errors.email} </div>
+          <div  className='req'> {formik.errors.email} </div>
         ) : null}{" "}
-      </div>{" "}
+              </div>{" "}
+      <br></br>
+
       <div >
         <div>
-          <label forhtml="pass" >
+          <label className='head' forhtml="pass" >
             Password:
           </label>{" "}
         </div>{" "}
         <input
           type="password"
           name="pass"
-          placeholder="set password"
-          
+          placeholder="Set Password"
+          className="in"
           onChange={formik.handleChange}
           value={formik.values.pass}
           onBlur={formik.handleBlur}
         />{" "}
         {formik.touched.pass && formik.errors.pass ? (
-          <div> {formik.errors.pass} </div>
+          <div  className='req'> {formik.errors.pass} </div>
         ) : null}{" "}
+        
       </div>{" "}
-      <div >
-        <div>
-          <label forhtml="address" >
-            Address:
-          </label>{" "}
-        </div>{" "}
-        <textarea
-          type="text"
-          name="address"
-          
-          rows="3"
-          cols="10"
-          placeholder="your address"
-          onChange={formik.handleChange}
-          value={formik.values.address}
-          onBlur={formik.handleBlur}
-        />{" "}
-        {formik.touched.address && formik.errors.address ? (
-          <div> {formik.errors.address} </div>
-        ) : null}{" "}
-      </div>{" "}
-      <button  type="submit">
+      <br></br>
+
+      
+      <button  type="submit" className='sub'>
         {" "}
-        submit{" "}
+        REGISTER{" "}
       </button>{" "}
+    </body>
     </form>
   );
 }

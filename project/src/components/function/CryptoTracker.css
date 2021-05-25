@@ -1,0 +1,14 @@
+.coin-search{
+    position:fixed;
+left:1100px;
+top:270px;
+}
+
+ .coin-text{
+font-style: oblique;
+}
+
+.coin-input{
+padding: 20px;
+width: 300px;
+} 

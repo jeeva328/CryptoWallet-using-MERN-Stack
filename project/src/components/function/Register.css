@@ -1,0 +1,70 @@
+.log{
+    position: absolute;
+    left:0px;
+    right:15px;
+    top:118.8px;
+    border: solid;
+    border-color: sandybrown;
+    background-color: black;
+    padding-top:2.6%;
+    padding-bottom: 6.6%;
+    padding-left: 45%;
+    padding-right: 54.7%;
+}
+
+.head{
+    color:sandybrown;
+font-family: Georgia, 'Times New Roman', Times, serif;
+   font-size: 17.5px;
+   white-space: nowrap;
+}
+
+
+.in{
+    border: solid;
+    border-radius: 4px;
+    border-color: grey;
+    border-width: medium;
+    padding-right: 10%;
+    background-color:whitesmoke;
+    padding: 10px;
+    width: 200px;
+}
+
+.sub{
+    font-family: "Roboto",sans-serif;
+    font-size: medium;
+    font-weight: bold;
+    background-color: #1E90FF;
+    padding: 8px;
+    text-align: center;
+    border-radius: 5px;
+    width: 130px;
+    color: white;
+    letter-spacing: 3px;
+
+    position:absolute;
+    left:48%;
+    top:82%;
+
+    box-shadow: 0 0 0px whitesmoke;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow,transform;
+    transition-property:  box-shadow,transform;
+}
+
+.sub:hover,.sub:focus,.sub:active{
+    box-shadow: 0 0 15px white;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+
+
+}
+
+.req{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10px;
+    color: white;
+    white-space: nowrap;
+}

@@ -8,6 +8,8 @@ import Main from './components/function/Main'
 import About from './components/function/About'
 import Contact from './components/function/Contact'
 import Register from './components/function/Register'
+import Loginform from './components/function/Loginform'
+import CryptoTracker from './components/function/CryptoTracker'
 
 import{BrowserRouter , Route , Switch} from 'react-router-dom'
 
@@ -41,6 +43,14 @@ import{BrowserRouter , Route , Switch} from 'react-router-dom'
 
   <Route exact path='/Register'>
   <Register/>
+  </Route>
+
+  <Route exact path='/Loginform'>
+  <Loginform/>
+  </Route>
+
+  <Route exact path='/CryptoTracker'>
+  <CryptoTracker/>
   </Route>
 
 
