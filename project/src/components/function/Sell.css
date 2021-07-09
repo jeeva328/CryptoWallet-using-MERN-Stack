@@ -1,0 +1,30 @@
+.sell-avai{
+    position: absolute;
+    bottom:73px;
+    left:520px;
+
+    height: 530px;
+    width: 650px;
+
+    background-color: #1E90FF;
+}
+
+.sell-head{
+    position: absolute;
+    display: flex;
+}
+
+.but-id{
+    position: relative;
+    top:-5px;
+    left:350px;
+}
+
+.all-sell{
+    position: relative;
+    display: flex;
+    top:40px;
+}
+
+
+

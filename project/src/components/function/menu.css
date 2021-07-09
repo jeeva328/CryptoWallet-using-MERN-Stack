@@ -84,3 +84,25 @@ transition: width .3s;
 transition: width .3s;
 
 }
+
+.pro{
+    position: absolute;
+    color:white;
+    left:1292px;
+    top:0px;    
+}
+
+.pro::after{
+    content: '';
+    display:block;
+    width: 0;
+    height:2px;
+    transition: width .3s;
+    background-color:white;
+}
+
+.pro:hover::after{
+    width: 100%;
+transition: width .3s;
+
+}

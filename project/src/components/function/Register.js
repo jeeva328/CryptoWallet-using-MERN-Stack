@@ -1,7 +1,11 @@
 import React from "react";
 import { Formik, useFormik } from "formik";
+import { useHistory } from 'react-router-dom'
 import './Register.css'
+import axios from "axios"
+import {Redirect} from "react-router-dom";
 
+var login = false;
 const initialValues = {
   name: "",
   birthday: "",
@@ -33,7 +37,15 @@ const validate = (values) => {
   return error;
 };
 
+
+
 function Loginss(props) {
+
+//   let history = useHistory();
+
+// let Call=()=>{
+//   history.push('/Loginform')
+// }
   
   const onSubmit = async (values) => {
     values.add = {
@@ -44,18 +56,28 @@ function Loginss(props) {
       pass: values.pass,
       address: values.address,
     };
-
+   var Data= await axios.post("http://localhost:2000/sign", values.add)
+    if(Data.status == 200)
+    {
+      console.log("it is in redirect");
+      // <Redirect to="/Loginform"></Redirect>
+      login = true;
+    }
     console.log(values.add)
   };
   const formik = useFormik({
     initialValues,
     onSubmit,
     validate,
+    // Call,
   });
   
-
+if(login == true)
+{
+    return <Redirect to={"/Loginform"}/>
+  }
   return (
-    <form  onSubmit={formik.handleSubmit}>
+    <form onSubmit={formik.handleSubmit}>
       <body className='log'>
       <div >
         <div>     
@@ -168,6 +190,7 @@ function Loginss(props) {
 
       
       <button  type="submit" className='sub'>
+
         {" "}
         REGISTER{" "}
       </button>{" "}

@@ -15,6 +15,7 @@ export default function Menu() {
             <div>
 <h5 className='feed'><Link to='/CryptoTracker'>Tracker</Link></h5>
 <h5 className='lo'><Link to ='/Loginform'>Login</Link></h5>
+<h5 className='pro'><Link to='/Profile'>Profile</Link></h5>
         </div>
         </div>
 

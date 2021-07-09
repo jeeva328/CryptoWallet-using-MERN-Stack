@@ -10,6 +10,9 @@ import Contact from './components/function/Contact'
 import Register from './components/function/Register'
 import Loginform from './components/function/Loginform'
 import CryptoTracker from './components/function/CryptoTracker'
+import Profile from './components/function/Profile'
+import Buy from './components/function/Buy'
+import Sell from './components/function/Sell'
 
 import{BrowserRouter , Route , Switch} from 'react-router-dom'
 
@@ -53,6 +56,21 @@ import{BrowserRouter , Route , Switch} from 'react-router-dom'
   <CryptoTracker/>
   </Route>
 
+  <Route exact path='/Profile'>
+  <Image/>
+  <Tracker/>
+  <Profile/>
+  </Route>
+
+  <Route exact path='/Buy'>
+  <Buy />
+  </Route>
+
+  <Route exact path='/Sell'>
+  <Image/>
+  <Tracker/>
+  <Sell/>
+  </Route>
 
 </Switch>
 

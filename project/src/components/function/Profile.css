@@ -1,0 +1,118 @@
+.profile-body{
+    position:absolute;
+    left:700px;
+    bottom:300px;
+
+}
+
+.user-profile{
+  position:absolute;
+  top:163px;
+  left:240px;   
+
+  color: sandybrown;
+  font-weight: bolder;
+  font-size: larger;
+  
+
+}
+
+.wallet{
+    position:relative;
+    top:242px;
+    right:195px;
+
+    border: solid sandybrown;
+    width: 1025.5px;
+    background-color: sandybrown;
+}
+
+.abc{
+    display:inline;
+}
+
+.buy-sell{
+    position: relative;
+    top:244px;
+    right:194px;
+
+    border:solid black;
+    height: 453px;
+    width: 1027px;
+    background-color: black;
+    
+}
+
+#bb{
+    font-family: "Roboto",sans-serif;
+    font-size: medium;
+    font-weight: bold;
+    background-color: #1E90FF;
+    padding: 38px;
+    text-align: center;
+    border-radius: 5px;
+    width: 200px;
+    color: white;
+    letter-spacing: 3px;
+
+position: relative;
+top: 150px;
+left:200px;
+
+    box-shadow: 0 0 0px whitesmoke;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow,transform;
+    transition-property:  box-shadow,transform;
+}
+
+#bb:hover,#bb:focus,#bb:active{
+    box-shadow: 0 0 15px white;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+
+
+}
+
+#bs{
+    font-family: "Roboto",sans-serif;
+    font-size: medium;
+    font-weight: bold;
+    background-color: #1E90FF;
+    padding: 38px;
+    text-align: center;
+    border-radius: 5px;
+    width: 200px;
+    color: white;
+    letter-spacing: 3px;
+
+    position: relative;
+    top: 150px;
+    left:450px;
+
+    box-shadow: 0 0 0px whitesmoke;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow,transform;
+    transition-property:  box-shadow,transform;
+}
+
+#bs:hover,#bs:focus,#bs:active{
+    box-shadow: 0 0 15px white;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.note{
+    position:absolute;
+    top:580px;
+    left:-175px;
+
+    color:whitesmoke;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#hint{
+    color: sandybrown;
+}
