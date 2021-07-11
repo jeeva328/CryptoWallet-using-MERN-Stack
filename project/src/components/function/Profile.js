@@ -1,12 +1,21 @@
 import React from 'react'
 import './Profile.css'
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
+import Cookies from 'universal-cookie';
+
+const cookies = new Cookies();
 
 
 function Profile() {
 
 const balance = 1000;
+    var cookiess = cookies.get('login');
+    console.log("login" , cookiess);
     
+   if(cookiess !== "true"){
+       return <Redirect to={"/Loginform"}/>
+   }
+
     return (
         <body className='profile-body'>
 <div>

@@ -3,6 +3,10 @@ import { Formik, useFormik } from "formik";
 import './Loginform.css'
 import axios from "axios"
 import { Redirect } from "react-router-dom";
+import Cookies from 'universal-cookie';
+
+const cookies = new Cookies();
+cookies.set('login', "false");
 var login = false;
 const initialValues = {
   email: "",
@@ -36,6 +40,8 @@ function Loginform(props) {
     if (Data.data.err == null) {
       console.log("it is not err")
       login = true
+      cookies.set('login', "true");
+      cookies.set('email', Data.data.id);
     }
     console.log(values.add)
   };

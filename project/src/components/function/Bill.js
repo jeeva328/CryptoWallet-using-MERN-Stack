@@ -1,7 +1,9 @@
 import React, {useEffect , useState} from 'react'
 import './Bill.css'
 import axios from 'axios';
+import Cookies from 'universal-cookie';
 
+const cookies = new Cookies();
 function Bill(props) {
 
 //   API Import
@@ -78,7 +80,9 @@ coin8:{c8 : '' , q8 : '', amt8 :'' },
 coin9:{c9 : '' , q9 : '', amt9 :'' },
 coin10:{c10 : '' , q10 : '', amt10 :'' },
 };
-   
+
+
+var sambavam = []
 
 const getValueBuy = () =>{
 initval.coin1.c1 = itemArray[0].name;
@@ -121,7 +125,8 @@ initval.coin10.c10 = itemArray[9].name;
 initval.coin10.q10 = props.icpP;
 initval.coin10.amt10 = Math.ceil(itemArray[9].rate * 75);
        }
-
+       var cookiess = cookies.get('email');
+       console.log("emaillllllllllllllllllll",cookiess);
       
     
       const Call = async () =>{
@@ -133,8 +138,118 @@ initval.coin10.amt10 = Math.ceil(itemArray[9].rate * 75);
           await getValueBuy();
           }
           console.log(initval);
+       
+        if(initval.coin1.q1>0){
+            let coin  = initval.coin1.c1
+            let val = initval.coin1.q1
+            let a ={
+                coin: coin,
+                val :val
+            }
+           sambavam.push(a)
+        }
+        if(initval.coin2.q2>0){
+            let coin  = initval.coin2.c2
+            let val = initval.coin2.q2
+            let a ={
+                coin: coin,
+                val :val
+            }
+           sambavam.push(a)
+         }
+         if(initval.coin3.q3>0){
+            let coin  = initval.coin3.c3
+            let val = initval.coin3.q3
+            let a ={
+                coin: coin,
+                val :val
+            }
+           sambavam.push(a)
+         }
+         if(initval.coin4.q4>0){
+            let coin  = initval.coin4.c4
+            let val = initval.coin4.q4
+            let a ={
+                coin: coin,
+                val :val
+            }
+           sambavam.push(a)
+         }
+         if(initval.coin5.q5>0){
+            let coin  = initval.coin5.c5
+            let val = initval.coin5.q5
+            let a ={
+                coin: coin,
+                val :val
+            }
+           sambavam.push(a)
+         }
+         if(initval.coin6.q6>0){
+            let coin  = initval.coin6.c6
+            let val = initval.coin6.q6
+            let a ={
+                coin: coin,
+                val :val
+            }
+           sambavam.push(a)
+         }
+         if(initval.coin7.q7>0){
+            let coin  = initval.coin7.c7
+            let val = initval.coin7.q7
+            let a ={
+                coin: coin,
+                val :val
+            }
+           sambavam.push(a)
+         }
+         if(initval.coin8.q8>0){
+            let coin  = initval.coin8.c8
+            let val = initval.coin8.q8
+            let a ={
+                coin: coin,
+                val :val
+            }
+           sambavam.push(a)
+         }
+         if(initval.coin9.q9>0){
+            let coin  = initval.coin9.c9
+            let val = initval.coin9.q9
+            let a ={
+                coin: coin,
+                val :val
+            }
+           sambavam.push(a)
+         }
+         if(initval.coin10.q10>0){
+            let coin  = initval.coin10.c10
+            let val = initval.coin10.q10
+            let a ={
+                coin: coin,
+                val :val
+            }
+           sambavam.push(a)
+         }
+         console.log("sambavam",sambavam)
+         if(sambavam.length !== 0)
+      {
+          sambavam.map(async(sam)=>{
+              let email = cookiess;
+              let coin_name =  sam.coin;
+              let coin_quan = sam.val
+
+              let ar = {
+                  email,
+                  coin_name,
+                  coin_quan
+              }
+
+           await axios.post("http://localhost:2000/buy",ar)
+          })
+      }
       }
 
+
+      
 
 
     return (

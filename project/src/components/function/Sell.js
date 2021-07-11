@@ -1,16 +1,27 @@
-import React ,{useState}from "react";
+import React ,{useEffect, useState}from "react";
 import { Formik, useFormik } from "formik";
 import './Sell.css'
-
-function Sell(props) {
+import axios from "axios";
+import Sellitem from './sellitem'
+ function Sell(props) {
 
 const [dum, setdum] = useState(0)
+const [datas,setdatas] = useState([])
+useEffect(async() => {
+  var Data =await  axios.get("http://localhost:2000/buy")
+ console.log("Data",Data.data)
+ let aa = Data.data
+ setdatas(Data.data)
+}, [])
+console.log("setDatas",datas);
   const dummy_sell = {
   name: 'Bitcoin',
   quantity : 10 , 
   current_val : 1000,
 } 
 
+var items = datas.map((data)=> <Sellitem datasss={data}/>)
+ 
   return (
       <div>    
 
@@ -25,22 +36,8 @@ const [dum, setdum] = useState(0)
             <h3> Current Val</h3> &nbsp;&nbsp;&nbsp;&nbsp;
             <h3>Sell quantity</h3>
           </div>
-
-          <div className='all-sell'>
-           <h4>{dummy_sell.name}</h4>  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-           <h4>{dummy_sell.quantity}</h4>  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-            <h4>{dummy_sell.current_val}</h4>
-          </div>
-
-          <div className='but-id'>
-        <button onClick={() => setdum(dum+1)} >
-        +
-        </button>
-        <button>
-        {dum}
-      </button>
-      <button onClick={()=> setdum(dum-1)}> - </button>
-      </div>
+       
+    {items}
 
         </div>
 

@@ -10,6 +10,7 @@ rout.get("/",async(req,res)=>{
 rout.post("/",async(req,res)=>{
     console.log("value",req.body)
     var buyid = await buy.create({
+        email:req.body.email,
         coin_name:req.body.coin_name,
         coin_quan:req.body.coin_quan
     })

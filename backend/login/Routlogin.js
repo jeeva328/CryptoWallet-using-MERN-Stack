@@ -9,7 +9,8 @@ route.post("/",async(req,res)=>{
         if(await req.body.pass == sig.pass)
         {
             console.log("is success")
-            res.status(200).json({err:null})
+            console.log("email",sig.email);
+            res.status(200).json({err:null,id:sig.email})
         }
         else{
             console.log("pass incorecct")
