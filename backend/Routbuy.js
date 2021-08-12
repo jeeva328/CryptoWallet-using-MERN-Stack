@@ -19,12 +19,16 @@ rout.post("/",async(req,res)=>{
 
 
 rout.put("/",async(req,res)=>{
-    const updatebuy = await buy.updateOne({ coin_name: req.body.coin_name }, { $set: {  coin_quan: req.body.coin_quan} })
+    console.log("it is in put")
+    console.log(req.body)  
+    const updatebuy = await buy.updateOne({ _id: req.body.id }, { $set: {  coin_quan: req.body.coin_quan} })
     res.status(200).json(updatebuy)
 })
 
 rout.delete("/",async(req,res)=>{
-    const delet = await buy.remove({ coin_name: req.body.coin_name })
+    console.log("it is in delete")
+    console.log(req.body)
+    const delet = await buy.deleteOne({ coin_name: req.body.coin_name })
     res.status(200).json(delet)
 })
 

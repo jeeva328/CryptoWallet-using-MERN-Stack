@@ -26,5 +26,11 @@
     top:40px;
 }
 
-
+.yathuku_button{
+    position:absolute;
+    left: 200px;
+    /* top: 900px; */
+    z-index: 3;
+    color: aqua;
+}
 

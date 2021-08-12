@@ -244,6 +244,7 @@ initval.coin10.amt10 = Math.ceil(itemArray[9].rate * 75);
               }
 
            await axios.post("http://localhost:2000/buy",ar)
+           console.log(ar);
           })
       }
       }

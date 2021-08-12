@@ -12,15 +12,17 @@ useEffect(async() => {
  console.log("Data",Data.data)
  let aa = Data.data
  setdatas(Data.data)
-}, [])
+})
 console.log("setDatas",datas);
   const dummy_sell = {
   name: 'Bitcoin',
   quantity : 10 , 
   current_val : 1000,
 } 
+  
+var itt = datas.filter((data)=>data.coin_quan !== 0);
 
-var items = datas.map((data)=> <Sellitem datasss={data}/>)
+var items = itt.map((data)=> <Sellitem datasss={data}/>)
  
   return (
       <div>    
