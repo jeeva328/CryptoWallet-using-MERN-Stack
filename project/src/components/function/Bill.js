@@ -1,19 +1,31 @@
 import React, {useEffect , useState} from 'react'
 import './Bill.css'
+import GooglePayButton from "@google-pay/button-react"
 import axios from 'axios';
 import Cookies from 'universal-cookie';
+import { UseState } from 'react';
+//import { toast } from 'react-toastify';
+//import {Ippopay} from 'react-ippopay';
+
+
+
 
 const cookies = new Cookies();
-function Bill(props) {
-
+var __id = cookies.get('email')
+console.log("jjjeeeeeeevvvvvvvvvv",__id)
+ function  Bill(props)  {
+var f = 150;
+const [vall, setvall] = useState("")
+// const [paystatus, setpaystatus] = useState(false)
 //   API Import
 var xyz; 
 var dummy = {name:'guna' , rate : 200000000000};
-
+// const [total, settotal] = useState(0)
+const [paystatus, setpaystatus] = useState(false)
 const [itemgetArray, setitemgetArray] = useState([])
-
 const [loading, setloading] = useState(true)
-
+const [jeeva, setjeeva] = useState({});
+const [valll, setvalll] = useState(0)
     useEffect( async () =>   {
         var items = await axios
            .get(
@@ -25,7 +37,22 @@ const [loading, setloading] = useState(true)
          setloading(false);
        
        }, []);
+       //payment
 
+       useEffect(async() => {
+          var money = await axios.get('http://localhost:2000/money');
+          console.log("ddddddddddddddddddddddddddddddddddd",money)
+          var ss =await money.data;
+          console.log(ss)
+          console.log(__id)
+          var aaa = ss.filter((d)=>__id == d.cus_id)
+          console.log("aaaa",aaa)
+          setvalll(aaa[0].cus_money)
+          console.log("asvaverfvasvfarfsdvasvarev",vall)
+       }, [valll])
+
+
+     
        var itemArray = [];
        itemgetArray.map((items) => itemArray.push({
            name:items.name,
@@ -46,6 +73,7 @@ const [loading, setloading] = useState(true)
        
 var tot_inr = a1+a2+a3+a4+a5+a6+a7+a8+a9+a10;
     
+// const [paystatus, setpaystatus] = useState();
 
     const validateBuy = () => {
     
@@ -152,6 +180,7 @@ initval.coin10.amt10 = Math.ceil(itemArray[9].rate * 75);
             let coin  = initval.coin2.c2
             let val = initval.coin2.q2
             let a ={
+
                 coin: coin,
                 val :val
             }
@@ -247,12 +276,43 @@ initval.coin10.amt10 = Math.ceil(itemArray[9].rate * 75);
            console.log(ar);
           })
       }
+      if(tot_inr!=0)
+      {
+        console.log("jeeva is very good boy")
+        let cus_money=parseInt(valll)- parseInt(tot_inr)
+    let fff = {
+      cus_id:__id,
+      cus_money
+    }
+   var s=  axios
+       .put(
+        'http://localhost:2000/money',fff
+       );
+       console.log(s);
+      }
       }
 
+     console.log("paystatus!!!!!!!!!!!!!!!!!!!!!!!!!!!",paystatus);
+  if(paystatus === true)
+{
 
-      
-
-
+  console.log("jeva!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! f***off")
+  // alert("jeeva f**k")
+  
+        console.log("jeeva is very good boy")
+        let cus_money=parseInt(vall)+parseInt(valll)
+    let fff = {
+      cus_id:__id,
+      cus_money
+    }
+   var s=  axios
+       .put(
+        'http://localhost:2000/money',fff
+       );
+    
+ console.log(s);
+ 
+}
     return (
         <div className='bill-container'>
             <div className='con-bill'>
@@ -272,15 +332,88 @@ initval.coin10.amt10 = Math.ceil(itemArray[9].rate * 75);
             <div id ='verti'></div>
             <div id ='verti2'></div> <div id ='verti3'></div>
 
-            <div className='tot-amt'>
-                Total Amout to be Paid (inr):
+            {/* <div className='tot-amt'>
+                abc
                 <br></br>
-                 {tot_inr}
-            </div>
+            </div> */}
+
+            
+          <div id="inputsss">
+            <label htmlFor="">Recharge wallet
+            <br />
+            </label>
+          <input  placeholder="enter the place" type="number" onChange={(e)=>setvall(e.target.value)}></input>
+          </div>
+
+<GooglePayButton
+                className="car"
+                environment="TEST"
+                paymentRequest={{
+                  apiVersion: 2,
+                  apiVersionMinor: 0,
+                  allowedPaymentMethods: [
+                    {
+                      type: "CARD",
+                      parameters: {
+                        allowedAuthMethods: ["PAN_ONLY", "CRYPTOGRAM_3DS"],
+                        allowedCardNetworks: ["MASTERCARD", "VISA"],
+                      },
+                      tokenizationSpecification: {
+                        type: "PAYMENT_GATEWAY",
+                        parameters: {
+                          gateway: "example",
+                          gatewayMerchantId: "exampleGatewayMerchantId",
+                        },
+                      },
+                    },
+                  ],
+                  merchantInfo: {
+                    merchantId: "12345678901234567890",
+                    merchantName: "JMCRYPTOWALLET",
+                  },
+                  transactionInfo: {
+                    totalPriceStatus: "FINAL",
+                    totalPriceLabel: "Total",
+                    totalPrice: String(vall),
+                    currencyCode: "INR",
+                    countryCode: "IN",
+                  },
+
+                  shippingAddressRequired: true,
+                  callbackIntents: [
+                    "SHIPPING_ADDRESS",
+                    "PAYMENT_AUTHORIZATION"
+                  ],
+                }
+                }
+                onLoadPaymentData={(paymentRequest) => {
+                  console.log("Success", paymentRequest);
+                  
+                }}
+                onPaymentAuthorized={(paymentData) => {
+                  console.log("Payment Authorised Success", paymentData);
+                  setpaystatus(true);
+                  return { transactionState: "SUCCESS" };
+                }}
+                onPaymentDataChanged={(paymentData) => {
+                  console.log("On Payment Data Changed", paymentData);
+                 
+
+                  return {};
+                }}
+                existingPaymentMethodRequired="false"
+                buttonColor="black"
+                buttonType="Credit"
+                
+              /> 
+     
 
             <div className='avai-bal'>
                 Availabe Balance :
-                <br></br> {props.bal}
+                <br></br> {valll}
+                <br></br>
+                Total Amout to be Paid (inr):
+                <br></br> {tot_inr}
             </div>
           
           <div className='list-list'>
@@ -319,7 +452,7 @@ initval.coin10.amt10 = Math.ceil(itemArray[9].rate * 75);
         BUY
         </button>
     </div>
-
+  
           <div className='bill-quant' >
           {props.btcP}
           <br></br>
