@@ -4,7 +4,7 @@
     left:520px;
 
     height: 530px;
-    width: 650px;
+    width: 645px;
 
     background-color: #1E90FF;
 }
@@ -34,3 +34,15 @@
     color: aqua;
 }
 
+.vid{
+    
+    position: absolute;
+    bottom:272px;
+    left:1167px;
+}
+
+.news{
+    position: absolute;
+    top:470px;
+    left: 1200px;
+}

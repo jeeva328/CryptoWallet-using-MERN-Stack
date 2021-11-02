@@ -1,16 +1,15 @@
-.bill-container{
+.bill-container {
     position: relative;
-    top:40px;
-    left:535px;
-
+    top: 40px;
+    left: 535px;
     background-color: sandybrown;
-    height:538px;
+    height: 538px;
     width: 900px;
 }
 
-.con-bill{
+.con-bill {
     position: relative;
-    top:10px;
+    top: 10px;
     text-align: center;
     font-weight: bolder;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -18,122 +17,120 @@
     letter-spacing: 3px;
 }
 
-#line-row{
-   position: absolute;
-   top: 35px;   
-   z-index: 0;
-  
-   background-color:white;
-   height:3px;
+#line-row {
+    position: absolute;
+    top: 35px;
+    z-index: 0;
+    background-color: white;
+    height: 3px;
     width: 900px;
-    
 }
 
-.cba{
+.cba {
     position: relative;
     display: flex;
 }
 
-#line-row2{
+#line-row2 {
     position: absolute;
-    top: 70px;   
+    top: 70px;
     z-index: 0;
-   
-    background-color:white;
-    height:3px;
-     width: 510px;
+    background-color: white;
+    height: 3px;
+    width: 510px;
 }
 
-#verti{
+#verti {
     position: absolute;
-    bottom: 0px; 
-    left:510px;  
+    bottom: 0px;
+    left: 510px;
     z-index: 0;
-   
-    background-color:white;
-    height:500px;
-     width: 3px;
+    background-color: white;
+    height: 500px;
+    width: 3px;
 }
 
-#verti2{
+#verti2 {
     position: absolute;
-    bottom: 0px; 
-    left:165px;  
+    bottom: 0px;
+    left: 165px;
     z-index: 0;
-   
-    background-color:white;
-    height:500px;
-     width: 3px;
+    background-color: white;
+    height: 500px;
+    width: 3px;
 }
 
-#verti3{
+#verti3 {
     position: absolute;
-    bottom: 0px; 
-    left:350px;  
+    bottom: 0px;
+    left: 350px;
     z-index: 0;
-   
-    background-color:white;
-    height:500px;
-     width: 3px;
+    background-color: white;
+    height: 500px;
+    width: 3px;
 }
 
-
-.tot-amt{
+.tot-amt {
     position: absolute;
-    right:70px;
+    right: 70px;
     border-radius: 10px;
+    height: 150px;
+    width: 260px;
+    background-color: rgb(220, 219, 230);
+}
 
+.avai-bal {
+    position: absolute;
+    right: 70px;
+    top: 280px;
+    border-radius: 10px;
     height: 150px;
     width: 250px;
     background-color: rgb(220, 219, 230);
 }
 
-.avai-bal{
-    position: absolute;
-    right:70px;
-    top:280px;
-    border-radius: 10px;
-
-    height: 150px;
-    width: 250px;
-    background-color: rgb(220, 219, 230);
-}
-
-.list-list{
+.list-list {
     position: relative;
-    left:14px;
-    font-weight:700;
-
-}
-
-.bill-quant{
-    position: relative;
-    bottom:409px;
-    left:250px; 
-
+    left: 14px;
     font-weight: 700;
 }
 
-.con-buy{
-    position: absolute;
-    right:145px;
-    bottom:30px;
+.bill-quant {
+    position: relative;
+    bottom: 409px;
+    left: 250px;
+    font-weight: 700;
+}
 
+.con-buy {
+    position: absolute;
+    right: 145px;
+    bottom: 30px;
     background-color: #1E90FF;
-    color:whitesmoke;
+    color: whitesmoke;
     letter-spacing: 3px;
     font-weight: 650;
     border-radius: 10px;
     box-shadow: whitesmoke;
-
     height: 50px;
     width: 100px;
+    z-index: 100;
 }
 
-.amt-bill{
-    position: relative;
-    bottom:820px;
-    left:405px; 
+.amt-bill {
+    position: absolute;
+    bottom: 820px;
+    left: 405px;
+    font-weight: 700;
+}
 
-    font-weight: 700;   
+.car {
+    position: absolute;
+    left: 580px;
+    top: 170px;
+}
+
+#inputsss {
+    position: relative;
+    left: 600px;
 }

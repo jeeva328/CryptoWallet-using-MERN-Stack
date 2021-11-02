@@ -4,16 +4,47 @@
     bottom:300px;
 
 }
+.vc{
+    position:relative;
+    top:276px;
+    left:157px;   
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 
 .user-profile{
-  position:absolute;
-  top:163px;
-  left:240px;   
-
-  color: sandybrown;
-  font-weight: bolder;
-  font-size: larger;
   
+  display: flex;
+  /* background-color:white; */
+  color: white;
+  font-size: 3vw;
+  -webkit-text-stroke:0.1vw black;
+}
+.user-profile::before{
+    display: flex;
+    content: "USER-PROFILE";
+    position: absolute;
+    top:0;
+    left:0;
+    color:sandybrown;
+    width: 0;
+    height: 100%;
+    -webkit-text-stroke: 0vw black;
+    border-right: 0px solid sandybrown;
+    overflow: hidden;
+    animation: cv 4s linear infinite;
+}
+@keyframes cv
+{
+0%,10%,100%
+{
+    width:0;
+}
+30%,70%,90%
+{
+    width: 100%;
+}
 
 }
 
@@ -47,7 +78,7 @@
     font-family: "Roboto",sans-serif;
     font-size: medium;
     font-weight: bold;
-    background-color: #1E90FF;
+    background-color: #00ffea;
     padding: 38px;
     text-align: center;
     border-radius: 5px;
@@ -55,9 +86,9 @@
     color: white;
     letter-spacing: 3px;
 
-position: relative;
-top: 150px;
-left:200px;
+    position: relative;
+    top: 150px;
+    left:170px;
 
     box-shadow: 0 0 0px whitesmoke;
     -webkit-transition-duration: 0.3s;
@@ -70,15 +101,14 @@ left:200px;
     box-shadow: 0 0 15px white;
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
-
-
 }
+
 
 #bs{
     font-family: "Roboto",sans-serif;
     font-size: medium;
     font-weight: bold;
-    background-color: #1E90FF;
+    background-color: #00ffea;
     padding: 38px;
     text-align: center;
     border-radius: 5px;
@@ -105,7 +135,7 @@ left:200px;
 
 .note{
     position:absolute;
-    top:580px;
+    top:720px;
     left:-175px;
 
     color:whitesmoke;

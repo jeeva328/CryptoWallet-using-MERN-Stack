@@ -20,12 +20,15 @@ const balance = 1000;
         <body className='profile-body'>
 <div>
             
-<div className='user-profile'>
-    <h2>USER PROFILE</h2>
+<div className='vc'>
+    <h2 className='user-profile'>USER-PROFILE</h2>
 </div>
 
 <div className='buy-sell'>
-    <button id='bb'> <Link to='/Buy'> BUY </Link> </button>
+    <span>
+    <button id='bb'> <Link to='/Buy'>
+         BUY </Link> </button></span>
+
     <button id='bs'><Link to = '/Sell'> SELL </Link></button>
 </div>
 

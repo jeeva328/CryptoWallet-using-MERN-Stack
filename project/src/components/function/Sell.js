@@ -31,7 +31,7 @@ var items = itt.map((data)=> <Sellitem datasss={data}/>)
           <div>
             SELL
           </div>
-
+         
           <div className='sell-head'>
             <h3> Coin name</h3> &nbsp;&nbsp;&nbsp;&nbsp;
             <h3> Quantity </h3> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -43,8 +43,18 @@ var items = itt.map((data)=> <Sellitem datasss={data}/>)
 
         </div>
 
+ <div className="vid">
+            <video autoPlay loop  width="370" height="340" controls
+             src="./Imagess/v.mp4" alt=""/>  
+        </div>
 
-
+        <div className='news'>
+  <h2>Some useful links</h2>
+  <div><a href="https://www.investopedia.com/terms/c/cryptocurrency.asp">What is Cryptocurrency?</a></div>
+<div><a href="https://cryptonews.com/">Latest Cryptocurrency News</a></div> 
+          <div><a href="https://marketmilk.babypips.com/crypto/currency-strength">Crypto Strength Meter</a></div>
+          <div><a href="https://countryask.com/cryptocurrency/top-facts-about-cryptocurrencies-you-should-know-in-2021-and-beyond/">Crypto Facts 2021</a></div>
+</div>
       </div>
 
      
